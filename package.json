@@ -1,0 +1,30 @@
+{
+  "name": "mypetstore",
+  "version": "1.0.0",
+  "description": "api for ecommerce compnay that sells pet supplies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnhn329/MyPetStore.git"
+  },
+  "keywords": [
+    "RESTful",
+    "API"
+  ],
+  "author": "Maxim Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mnhn329/MyPetStore/issues"
+  },
+  "homepage": "https://github.com/mnhn329/MyPetStore#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
