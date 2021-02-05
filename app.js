@@ -1,15 +1,30 @@
-var express = require('express'),
-  app = express(),
-  port = process.env.PORT || 3000;
+const express = require('express');
+const fetch = require('node-fetch');
+const app = express();
+const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-    console.log(req)
-    res.send('Hello World!')
-})
 
-app.get('/about', (req, res)=>{
-    console.log(req)
-    res.send("This is a site to sell the greatest pet supplies")
+app.get('/:postalCode', async (req, res) => {
+    try {
+      const { postalCode } = req.params
+
+      const canadaPostRes = await fetch(
+        'https://7ywg61mqp6.execute-api.us-east-1.amazonaws.com/prod/rates/' + postalCode
+      )
+      const canadaPostResJson = await canadaPostRes.json()
+      console.log(canadaPostResJson)
+
+      const boxKnightRes = await fetch(
+        'https://lo2frq9f4l.execute-api.us-east-1.amazonaws.com/prod/rates/' + postalCode
+      )
+      const boxKnightResJson = await boxKnightRes.json()
+      console.log(boxKnightResJson)
+
+      res.send('Done – check console log')
+    } catch (err) {
+      console.log(err)
+      res.status(500).send('Something went wrong')
+    }
 })
 
 app.listen(port,(err)=>{
