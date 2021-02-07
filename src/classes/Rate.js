@@ -6,11 +6,11 @@ class Rate {
         this.estimateDays = estimateDays;
     }
 
-    setID(id) {
+    setId(id) {
         this.id = id;
     }
 
-    getID() {
+    getId() {
         return this.id;
     }
 
