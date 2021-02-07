@@ -14,7 +14,7 @@ class Rates {
     }
 
     printRates() {
-        for (i=0; i<this.rates.length; i++) {
+        for (let i=0; i<this.rates.length; i++) {
             console.log(
                 'id: ' + this.getRateByPosition(i).getID() + '\n' +
                 'description: ' + this.getRateByPosition(i).getDescription() + '\n' +
@@ -26,7 +26,7 @@ class Rates {
 
     getBestRate() {
         let allRates = [];
-        for (i=0; i<this.rates.length; i++) {
+        for (let i=0; i<this.rates.length; i++) {
             allRates.push(this.rates[i])
         }
 
