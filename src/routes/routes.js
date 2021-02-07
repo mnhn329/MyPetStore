@@ -2,8 +2,8 @@ const { Router } = require('express');
 const controller = require('../controllers/controller');
 const router = new Router();
 
-router.get('/getBestRate/:postalCode', async (req, res) => {
-  controller.createBestRateShipment(req, res)
+router.post('/getBestShippingRate', async (req, res) => {
+  controller.getBestShippingRate(req, res)
 })
 
 module.exports = router;

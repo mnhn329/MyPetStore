@@ -7,10 +7,10 @@ class Controller {
     constructor() {
     }
 
-    async createBestRateShipment(req, res, next) {
-      const { postalCode } = req.params
+    async getBestShippingRate(req, res) {
+      const postalCode = req.body.postalCode
       let bestRate = new Rate();
-      bestRate = await ratesService.getAllShippingRates(postalCode)
+      bestRate = await ratesService.getBestRate(postalCode)
 
       res.send({
         'id': bestRate.getId(), 

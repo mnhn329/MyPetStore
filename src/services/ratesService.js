@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const Rate = require('../classes/Rate')
 const Rates = require('../classes/Rates')
 
-exports.getAllShippingRates =  async function(postalCode) {
+exports.getBestRate =  async function(postalCode) {
     try {
         let bestRate;
         let allShippingRates = new Rates();
@@ -46,7 +46,7 @@ exports.getAllShippingRates =  async function(postalCode) {
     }
 };
 
-exports.makeShipment =  async function(id, postalCode, description) {
+exports.makeShipment = async function(id, postalCode, description) {
     try {
 
         const body = { 
