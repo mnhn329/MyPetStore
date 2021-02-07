@@ -48,7 +48,6 @@ exports.getBestRate =  async function(postalCode) {
 
 exports.makeShipment = async function(id, postalCode, description) {
     try {
-
         const body = { 
             'id': id,
             'destination': { 'postalCode': postalCode }
