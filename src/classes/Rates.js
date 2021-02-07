@@ -5,6 +5,10 @@ class Rates {
         this.rates = [];
     }
 
+    getLength() {
+        return this.rates.length;
+    }
+
     getRateByPosition(index) {
         return this.rates[index];
     }
